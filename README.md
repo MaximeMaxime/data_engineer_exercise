@@ -20,9 +20,9 @@ Use any presentation form you deem necessary (ppt, pdf, schema, drawings, code s
 
 Design and develop a pipeline to keep track of top articles on https://www.kdnuggets.com/ using the "Top Stories Past 30 Days" section of the page. 
 1. Every hour, gather the following info about the top 10 most popular stories from that list
-  1. timestamp
-  2. author
-  3. title
+  * timestamp
+  * author
+  * title
 2. Create a pipeline to push this info to a messaging system (Pipeline A)
 3. Design a schema for storing this information in a database
 4. Create a pipeline to consume from the messaging system and store in the database (Pipeline B)
@@ -34,8 +34,8 @@ Create another pipeline (Pipeline C) to consume the message queue above, compute
 Develop a web service which takes an author's name as input and returns the last three articles stored in your database for that author.
 
 # Extra Points : 
-- Can you monitor the health status of your pipelines & APIs?
-- Can you implement this using Google Cloud Platform's tools & technologies? (Note : you have 300$ worth of free credits the first time you sign in to GCP)
+* Can you monitor the health status of your pipelines & APIs?
+* Can you implement this using Google Cloud Platform's tools & technologies? (Note : you have 300$ worth of free credits the first time you sign in to GCP)
 
 *IMPORTANT* : Here are some *examples* of technologies that we would like to see in action :
 1. An OOP Language : Python or Scala
