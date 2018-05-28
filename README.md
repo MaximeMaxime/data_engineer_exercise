@@ -37,7 +37,8 @@ Develop a web service which takes an author's name as input and returns the last
 * Can you monitor the health status of your pipelines & APIs?
 * Can you implement this using Google Cloud Platform's tools & technologies? (Note : you have 300$ worth of free credits the first time you sign in to GCP)
 
-*IMPORTANT* : Here are some *examples* of technologies that we would like to see in action :
+# IMPORTANT
+Here are some *examples* of technologies that we would like to see in action :
 1. An OOP Language : Python or Scala
 2. A pipelining framework : Airflow, Luigi or Pinball
 3. A messaging broker : Rabbitmq or Kafka,
