@@ -20,9 +20,9 @@ Use any presentation form you deem necessary (ppt, pdf, schema, drawings, code s
 
 Design and develop a pipeline to keep track of top articles on https://www.kdnuggets.com/ using the "Top Stories Past 30 Days" section of the page. 
 1. Every hour, gather the following info about the top 10 most popular stories from that list
-  * timestamp
-  * author
-  * title
+    * timestamp
+    * author
+    * title
 2. Create a pipeline to push this info to a messaging system (Pipeline A)
 3. Design a schema for storing this information in a database
 4. Create a pipeline to consume from the messaging system and store in the database (Pipeline B)
