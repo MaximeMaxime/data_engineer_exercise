@@ -33,7 +33,7 @@ Use any presentation form you deem necessary (ppt, pdf, schema, drawings, code s
 Implement an engine that retrieves the same information as in *Exercise 1a* by directly scraping from https://www.cbc.ca/news periodically (ex : every hour, using a scheduling tool) 
 
 # Exercise 1c: Data Ingestion / API 
-Implement an engine that retrieves the same information as in *Exercise 1a* using the Twitter API on CBC's Twitter account https://twitter.com/CBC
+Implement an engine that retrieves the same information (exclude *author*) as in *Exercise 1a* using the Twitter API on CBC's Twitter account https://twitter.com/CBC
 
 # Exercise 2 : Data Engineering & Storing
 As data is received from the services in Exercise 1a 1b and 1c, it should be curated and stored. 
