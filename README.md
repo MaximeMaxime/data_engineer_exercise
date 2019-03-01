@@ -21,21 +21,25 @@ Use any presentation form you deem necessary (ppt, pdf, schema, drawings, code s
 <br></br>
 
 
-# Exercise 1 : Data Ingestion / Scraping
+# Exercise 1a : Data Ingestion / RSS
 1. Design and implement a pipeline to ingest the RSS feed from https://www.cbc.ca/cmlink/rss-topstories and retrieve the following info about the ingested articles
     * Timestamp
     * Author
     * Title
     * Descriptive text
-2. Push the ingested data to the service in Exercise 2
+2. Create a service to post the ingested data to the service in *Exercise 2*
 
-**Extra points** : What would you do if there was no RSS feed available? Implement an engine that would retrieve the same information directly from https://www.cbc.ca/news periodically (ex : every hour) 
+# Exercice 1b : Data Ingestion / Web Scraping
+Implement an engine that retrieves the same information as in *Exercise 1a* by directly scraping from https://www.cbc.ca/news periodically (ex : every hour, using a scheduling tool) 
+
+# Exercise 1c: Data Ingestion / API 
+Implement an engine that retrieves the same information as in *Exercise 1a* using the Twitter API on CBC's Twitter account https://twitter.com/CBC
 
 # Exercise 2 : Data Engineering & Storing
-As data is received from the service in Exercise 1, it should be curated then stored. 
+As data is received from the services in Exercise 1a 1b and 1c, it should be curated and stored. 
 1. Clean up the data to facilitate its retrieval as described in *Exercise 3*
 2. Store the data in the engine of your choice, keep in mind the following requirements : 
-    * There will be many services like the one in Exercise 1 pushing data from different sources
+    * There are many services posting concurently from different sources
     * Later use of the stored data will be to be retrieved as described in *Exercise 3*
 
 # Exercise 3 : Retrieve API
@@ -54,4 +58,5 @@ Output : interest_level (float) : Interest level on the article, ranges from 0 t
 
   * Can you ensure scalability of the engine?
   * Can you monitor the health of the engine?
+  * Can you package the service in a docker container?
 
