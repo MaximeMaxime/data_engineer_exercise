@@ -49,7 +49,7 @@ Create a service allowing GET requests to search the stored data by timestamp, a
 1. Monitor the health status of your pipelines & services from previous exercises
 2. Create an alerting system based on this health status check
 
-# Extra points : ML Serving
+# Exercise 5 : ML Serving
 The *rocket_science.py* file contains a state-of-the-art machine learning algorithm to identify if the ingested article is of interest or not. Implement it the architecture you have constructed so far and store it's output in the engine chosen in *Exercise 2*
 ```
 Input : article_text (string) : The text of the article
