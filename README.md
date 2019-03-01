@@ -47,10 +47,11 @@ Create a service allowing GET requests to search the stored data by timestamp, a
 
 # Extra points : ML Serving
 The *rocket_science.py* file contains a state-of-the-art machine learning algorithm to identify if the ingested article is of interest or not. Implement it the architecture you have constructed so far and store it's output in the engine chosen in *Exercise 2*
-  * **Input** : article_text (string) : The text of the article
-  * **Output** : interest_level (float) : Interest level on the article, ranges from 0 to 1.
+```
+Input : article_text (string) : The text of the article
+Output : interest_level (float) : Interest level on the article, ranges from 0 to 1.
+```
 
-Can you ensure scalability of the engine?
-
-Can you monitor the health of the engine?
+  * Can you ensure scalability of the engine?
+  * Can you monitor the health of the engine?
 
