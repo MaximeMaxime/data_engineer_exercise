@@ -5,42 +5,51 @@ Below are some data engineering exercices. Note that we will use them to evaluat
 2. Your data engineering designing skills, and;
 3. Your creativity.
 
-## To Do : 
+## To Do 
 1. Follow the instructions below while maintaining a presentable (clean) project. 
 2. Over the next interview, we will ask that you present a demo of your work (environment set up, tools used, architecture, pipelines developped, scripts, etc...).
 Use any presentation form you deem necessary (ppt, pdf, schema, drawings, code snippets, etc.) in addition to the live demo.
 
-## Remember : 
+## Remember 
 1. Ensure you apply best scripting/development practices.
 2. Make assumptions where necessary - We are interested in your approach primarily.
 3. The best of works goes unnoticed if not well explained - You only have 30-40min to present your work, focus on the important pieces.
 4. Be creative.
 
-# Exercise 1 : Webscraping Pipelines & Messaging
+**Good Luck!**
+<br></br>
+<br></br>
 
-Design and develop a pipeline to keep track of top articles on https://www.kdnuggets.com/ using the "Top Stories Past 30 Days" section of the page. 
-1. Every hour, gather the following info about the top 10 most popular stories from that list
-    * timestamp
-    * author
-    * title
-2. Create a pipeline to push this info to a messaging system (Pipeline A)
-3. Design a schema for storing this information in a database
-4. Create a pipeline to consume from the messaging system and store in the database (Pipeline B)
 
-# Exercise 2 : 
-Create another pipeline (Pipeline C) to consume the message queue above, compute article count by author and store the results into the database.
+# Exercise 1 : Data Ingestion / Scraping
+1. Design and implement a pipeline to ingest the RSS feed from https://www.cbc.ca/cmlink/rss-topstories and retrieve the following info about the ingested articles
+    * Timestamp
+    * Author
+    * Title
+    * Descriptive text
+2. Push the ingested data to the service in Exercise 2
 
-# Exercise #3 : 
-Develop a web service which takes an author's name as input and returns the last three articles stored in your database for that author.
+**Extra points** : What would you do if there was no RSS feed available? Implement an engine that would retrieve the same information directly from https://www.cbc.ca/news periodically (ex : every hour) 
 
-# Extra Points : 
-* Can you monitor the health status of your pipelines & APIs?
-* Can you implement this using Google Cloud Platform's tools & technologies? (Note : you have 300$ worth of free credits the first time you sign in to GCP)
+# Exercise 2 : Data Engineering & Storing
+As data is received from the service in Exercise 1, it should be curated then stored. 
+1. Clean up the data to facilitate its retrieval as described in *Exercise 3*
+2. Store the data in the engine of your choice, keep in mind the following requirements : 
+    * There will be many services like the one in Exercise 1 pushing data from different sources
+    * Later use of the stored data will be to be retrieved as described in *Exercise 3*
 
-# IMPORTANT
-Here are some *examples* of technologies that we would like to see in action :
-1. An OOP Language : Python or Scala
-2. A pipelining framework : Airflow, Luigi or Pinball
-3. A messaging broker : Rabbitmq or Kafka,
-4. A real time processing framework : Spark or Storm
-5. A permanent storage : postgres or cassandra
+# Exercise 3 : Retrieve API
+Create a service allowing GET requests to search the stored data by timestamp, author and/or keywords, returning the stories.
+
+# Exercise 4 : Monitoring
+1. Monitor the health status of your pipelines & services from previous exercises
+2. Create an alerting system based on this health status check
+
+# Extra points : ML Serving
+The *rocket_science.py* file contains a state-of-the-art machine learning algorithm to identify if the ingested article is of interest or not. Implement it the architecture you have constructed so far and store it's output in the engine chosen in *Exercise 2*
+  * **Input** : article_text (string) : The text of the article
+  * **Output** : interest_level (float) : Interest level on the article, ranges from 0 to 1.
+
+Can you ensure scalability of the engine?
+Can you monitor the health of the engine?
+
