@@ -50,7 +50,7 @@ Create a service allowing GET requests to search the stored data by timestamp, a
 2. Create an alerting system based on this health status check
 
 # Exercise 5 : ML Serving
-The *rocket_science.py* file contains a state-of-the-art machine learning algorithm to identify whether or not the ingested article is of interest to our multiple users. Deploy this algorithm as an API, adjust its *get_article()* method and store the output in the engine chosen in *Exercise 2* for later retrieval.
+The *rocket_science.py* file contains a state-of-the-art machine learning algorithm to identify whether or not the ingested article is of interest to our multiple users. Deploy this algorithm as an API, adjust its *get_article()* and *store_result()* methods to fetch the article and store the output in the engine chosen in *Exercise 2* for later retrieval.
 ```
 Input :  article_id (integer) : Article Identifier
          user_id (integer) : User Identifier

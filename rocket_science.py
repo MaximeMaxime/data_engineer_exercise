@@ -21,7 +21,9 @@ class article_classifier(object):
 
     def run(self, article_id, user_id):
         article_text = self.get_article(article_id)
-        return self.classifier(article_text, user_id)
+        result = self.classifier(article_text, user_id)
+        self.store_result(article_id, user_id, result)
+        return result
 
 
     def get_article(self, article_id):
@@ -42,3 +44,7 @@ class article_classifier(object):
                 return 1
             else:
                 return uniform(0,1,1)[0]
+
+    def store_result(user_id, article_id, result):
+        """ This method should store the result in the storage engine """
+        raise Exception("You must implement the store_result() method which stores the result in the storage engine")
