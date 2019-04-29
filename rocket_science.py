@@ -3,19 +3,42 @@ from numpy.random import uniform
 class article_classifier(object):
     """ article_classifier outputs an interest level (0-1) for a given text
     ------------------
-    :params article_text: (string) The text of the article
+    :params article_id (integer) : Article Identifier
+    :params user_id (integer) : User Identifier
+
     :return interest_level :(float)  The interest level
+
     ------------------
     Example Usage : 
 
-    article_text = 'This is an amazing article'
-    response = article_classifier(article_text = article_text).run()
+    article_id = 123
+    user_id = 358
+    response = article_classifier().run(article_id=article_id, user_id=user_id)
     print response
     """
-    def __init__(self, article_text):
-        self.article_text = article_text
+    def __init__(self):
+        pass
 
-    def run(self):
-        return uniform(0,1,1)[0]
+    def run(self, article_id, user_id):
+        article_text = self.get_article(article_id)
+        return self.classifier(article_text, user_id)
 
 
+    def get_article(self, article_id):
+        """ This method should fetch the article's text and return it as a string """
+        raise Exception("You must implement the get_article() method which fetches the article's text and returns it as a string")
+
+    @staticmethod
+    def classifier(article_text, user_id):
+        """ Our research has proven that whether the level of interest correlates with :
+            whether the user_id is odd or even and the length of the article's text """
+        if user_id % 2 == 0:
+            if len(article_text.split(" ")) % 2 == 0:
+                return uniform(0,1,1)[0]
+            else:
+                return 0    
+        else:
+            if len(article_text) > 120:
+                return 1
+            else:
+                return uniform(0,1,1)[0]
