@@ -52,9 +52,9 @@ Create a service allowing GET requests to search the stored data by timestamp, a
 # Exercise 5 : ML Serving
 The *rocket_science.py* file contains a state-of-the-art machine learning algorithm to identify whether or not the ingested article is of interest to our multiple users. Deploy this algorithm as an API, adjust its *get_article()* method and store the output in the engine chosen in *Exercise 2* for later retrieval.
 ```
-	Input :  article_id (integer) : Article Identifier
-	         user_id (integer) : User Identifier
-    Output : interest_level (float) : Interest level of the user regarding the article (ranges from 0 to 1)
+Input :  article_id (integer) : Article Identifier
+         user_id (integer) : User Identifier
+Output : interest_level (float) : Interest level of the user regarding the article (ranges from 0 to 1)
 ```
   * What happens if the requested *article_id* does not exist?
   * Can you ensure scalability of the engine?
