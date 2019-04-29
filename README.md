@@ -57,6 +57,6 @@ Input :  article_id (integer) : Article Identifier
 Output : interest_level (float) : Interest level of the user regarding the article (ranges from 0 to 1)
 ```
   * What happens if the requested *article_id* does not exist?
-  * Can you ensure scalability of the engine?
-  * Can you monitor the health of the engine?
   * Can you package the service in a docker container?
+  * How do you ensure scalability of the engine?
+  * Can you monitor the health of the engine?
